@@ -37,9 +37,17 @@ function Task(chore, deadline, location) {
 $(document).ready(function() {
   $(".inputForm").submit(function(event) {
     event.preventDefault();
+    alert("Hello!");
     let listName = $("#listName").val();
     let choreName = $("#choreName").val();
-    let deadline = $("#deadline")
-
+    let deadline = $("#deadline").val();
+    let location = $("#location").val();
+    let newTask = choreName.split(" ").join("");
+    $("#outputList").text(listName);
+    console.log(listName);
+    console.log(choreName);
+    console.log(deadline);
+    console.log(location);
+    console.log(newTask);
   });
 });
