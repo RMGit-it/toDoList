@@ -1,9 +1,9 @@
 // Business Logic for ToDoList
-listName = new ToDoList();
+//listName = new ToDoList();
 
 function ToDoList() {
-  this.tasks = [];
-  this.currentId = 0;
+  this.tasks = [],
+  this.currentId = 0
 }
 ToDoList.prototype.addTask = function(task) {
   task.id = this.assignId();
@@ -24,7 +24,6 @@ ToDoList.prototype.removeTask = function(id) {
   };
   return false;
 }
-
 //Business Logic for Tasks
 function Task(chore, deadline, location) {
   this.chore = chore;
@@ -34,20 +33,24 @@ function Task(chore, deadline, location) {
 
 
 //UI Logic
+let toDoList = new ToDoList();
 $(document).ready(function() {
   $(".inputForm").submit(function(event) {
     event.preventDefault();
-    alert("Hello!");
     let listName = $("#listName").val();
-    let choreName = $("#choreName").val();
-    let deadline = $("#deadline").val();
-    let location = $("#location").val();
-    let newTask = choreName.split(" ").join("");
-    $("#outputList").text(listName);
-    console.log(listName);
-    console.log(choreName);
-    console.log(deadline);
-    console.log(location);
-    console.log(newTask);
+    let inputtedChore = $("#choreName").val();
+    let inputtedDeadline = $("#deadline").val();
+    let inputtedLocation = $("#location").val();
+    //let task = inputtedChore
+    let newTask = new Task(inputtedChore, inputtedDeadline, inputtedLocation)
+    toDoList.addTask(newTask);
+    console.log(toDoList.tasks);
+    $("#outputList").text(toDoList.tasks[0].chore);
   });
 });
+
+// console.log(listName);
+// console.log(chore);
+// console.log(deadline);
+// console.log(location);
+// console.log(task);
