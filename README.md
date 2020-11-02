@@ -11,7 +11,13 @@
 
 | Describe:  | Input | Output |
 | :-----------------------------------| :------------- | :------------- |
-| 
+| toDoList() | | |
+| Add Task to a list | addTask(dishes) | toDoList [dishes] |\
+| Remove task from a list | removeTask(Dishes) | toDoList [] |
+| Indicate that task has been completed | 
+
+| Task()| | |
+| Take user info regarding task, deadline and location: | task1( task: "Clean Kitchen", deadline: "11/2/2020, 6pm", location: "House") |  task1 { "Clean Kitchen", "11/2/2020, 6pm", "House"} |
 
 
 
