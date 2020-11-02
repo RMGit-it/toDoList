@@ -7,6 +7,17 @@ function ToDoList() {
 ToDoList.prototype.addTask = function(task) {
   this.tasks.push(task);
 }
+ToDoList.prototype.removeTask = function(id) {
+  for (let i=0; i<this.tasks.length; i++){
+    if (this.tasks[i]) {
+      if (this.tasks[i].id == id) {
+        delete this.tasks[i];
+        return true;
+      }
+    }
+  };
+  return false;
+}
 
 //Business Logic for Tasks
 function Task(chore, deadline, location) {
