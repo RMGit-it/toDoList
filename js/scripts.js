@@ -3,9 +3,14 @@ let  honeyDo = new ToDoList();
 
 function ToDoList() {
   this.tasks = [];
+  this.currentId = 0;
 }
 ToDoList.prototype.addTask = function(task) {
   this.tasks.push(task);
+}
+ToDoList.prototype.assignId = function() {
+  this.currentId+= 1;
+  return this.currentId;
 }
 ToDoList.prototype.removeTask = function(id) {
   for (let i=0; i<this.tasks.length; i++){
