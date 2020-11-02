@@ -45,7 +45,7 @@ $(document).ready(function() {
     let newTask = new Task(inputtedChore, inputtedDeadline, inputtedLocation)
     toDoList.addTask(newTask);
     console.log(toDoList.tasks);
-    $("#outputList").text(toDoList.tasks[0].chore);
+    $("#outputList").append("<input type='checkbox' name='task' value='completed'>" + toDoList.tasks[0].chore + " " + toDoList.tasks[0].deadline + " " + toDoList.tasks[0].location) + "<br>";
   });
 });
 
