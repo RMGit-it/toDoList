@@ -1,5 +1,5 @@
 // Business Logic for ToDoList
-let  honeyDo = new ToDoList();
+listName = new ToDoList();
 
 function ToDoList() {
   this.tasks = [];
@@ -31,3 +31,15 @@ function Task(chore, deadline, location) {
   this.deadline = deadline;
   this.location = location;
 }
+
+
+//UI Logic
+$(document).ready(function() {
+  $(".inputForm").submit(function(event) {
+    event.preventDefault();
+    let listName = $("#listName").val();
+    let choreName = $("#choreName").val();
+    let deadline = $("#deadline")
+
+  });
+});
