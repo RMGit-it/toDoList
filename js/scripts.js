@@ -6,6 +6,7 @@ function ToDoList() {
   this.currentId = 0;
 }
 ToDoList.prototype.addTask = function(task) {
+  task.id = this.assignId();
   this.tasks.push(task);
 }
 ToDoList.prototype.assignId = function() {
